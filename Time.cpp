@@ -21,7 +21,7 @@ int main() {
     clock_gettime(CLOCK_REALTIME, &end);
 
     // difference start & end time
-    double elapsed_time = ((end.tv_sec - start.tv_sec) + (end.tv_nsec - start.tv_nsec)) / 1e9;
+    double elapsed_time = (end.tv_sec - start.tv_sec) + (end.tv_nsec - start.tv_nsec) / 1e9;
 
     std::cout << std::fixed << "time: " << elapsed_time << " seconds";
 
