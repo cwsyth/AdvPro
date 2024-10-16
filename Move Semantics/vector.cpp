@@ -92,30 +92,3 @@ class Vector2 {
             std::cout << "Destructor called" << std::endl;
         }
 };
-
-/*
-int main() {
-    Vector2 v1(3);
-    Vector2 v2(v1);
-    std::cout << v1.size << std::endl;
-    std::cout << v2.size << std::endl;
-
-    Vector2 v3(4);
-    std::cout << v3.size << std::endl;
-    Vector2 v4(std::move(v3));
-    std::cout << v4.size << std::endl;
-    std::cout << v3.size << std::endl;
-
-    Vector2 v5(5);
-    std::cout << v5.size << std::endl;
-    v5 = v1;
-    std::cout << v5.size << std::endl;
-
-    Vector2 v6(6);
-    std::cout << v6.size << std::endl;
-    v6 = std::move(v1);
-    std::cout << v6.size << std::endl;
-    std::cout << v1.size << std::endl;
-
-    return 0;
-} */
