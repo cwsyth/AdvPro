@@ -4,18 +4,18 @@
 #include <iostream>
 #include <string>
 #include <vector>
-using namespace std;
+#include <string>
 
 const int domainSize = 10;
 
 struct Person {
     int key;
-    string name;
+    std::string name;
 };
 
-vector<Person> countSort(vector<Person> v1) {
-    vector<int> c(domainSize);
-    vector<Person> v2(v1.size());
+std::vector<Person> countSort(std::vector<Person> v1) {
+    std::vector<int> c(domainSize);
+    std::vector<Person> v2(v1.size());
 
     // count keys
     for (Person person : v1) {
@@ -38,8 +38,7 @@ vector<Person> countSort(vector<Person> v1) {
 }
 
 int main() {
-
-    vector<Person> persons {
+    std::vector<Person> persons {
         {3, "Steven"},
         {1, "Bob"},
         {2, "Alice"},
@@ -48,11 +47,11 @@ int main() {
         {10, "Edward"}
     };
 
-    vector<Person> sortedPersons = countSort(persons);
+    std::vector<Person> sortedPersons = countSort(persons);
 
-    cout << "Sorted Persons by Key:\n";
+    std::cout << "Sorted Persons by Key:\n";
     for (Person person : sortedPersons) {
-        cout << "Key: " << person.key << ", Name: " << person.name << '\n';
+        std::cout << "Key: " << person.key << ", Name: " << person.name << std::endl;
     }
 
     return 0;

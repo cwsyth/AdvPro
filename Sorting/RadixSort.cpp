@@ -4,7 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <cmath>
-using namespace std;
+#include <algorithm>
 
 int getDigit(int place, int num) {
     int digit = num;
@@ -16,14 +16,14 @@ int getDigit(int place, int num) {
     return digit % 10;
 }
 
-void radixSort(vector<int> &v) {
+void radixSort(std::vector<int> &v) {
     int maxValue = *std::max_element(v.begin(), v.end());
     int numberOfDigits = log10(maxValue) + 1;
     
     for (int i = 0; i < numberOfDigits; i++) {
         std::cout << "Current digit " << i+1 << "\n";
 
-        vector<vector<int>> bucket(10); // digits 0 to 9
+        std::vector<std::vector<int>> bucket(10); // digits 0 to 9
 
         for (int j = 0; j < v.size(); j++) {
             int digit = getDigit(i, v[j]);
@@ -36,7 +36,7 @@ void radixSort(vector<int> &v) {
             for (int k = 0; k < bucket[j].size(); k++) {
                 std::cout << bucket[j][k] << ", ";
             }
-            cout << '\n';
+            std::cout << '\n';
         }
 
         // concat
@@ -47,16 +47,16 @@ void radixSort(vector<int> &v) {
             }
         }
 
-        cout << "current result: ";
+        std::cout << "current result: ";
         for (int num : v) {
-            cout << num << ", ";
+            std::cout << num << ", ";
         }
-        cout << '\n' << '\n';
+        std::cout << '\n' << '\n';
     }
 }
 
 int main() {
-    vector<int> v = { 403, 16, 239, 821, 9, 342, 910, 524, 373, 145 };
+    std::vector<int> v = { 403, 16, 239, 821, 9, 342, 910, 524, 373, 145 };
 
     radixSort(v);
 }
