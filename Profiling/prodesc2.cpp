@@ -15,27 +15,6 @@ const unsigned REPE = 10000;
 //typedef float VectC[N];
 typedef vector<float> VectC;
 
-float RandNumber(float max);
-void FillVec(VectC &v, unsigned tam);
-float DotProduct(VectC &v1, VectC &v2, unsigned tam);
-
-int main(void)
-{
-    VectC v1(N),v2(N);
-    float c;
-    
-    for(unsigned i = 0; i < REPE; i++)
-    {
-        FillVec(v1, N);
-        FillVec(v2, N);
-    
-        c = DotProduct(v1, v2, N);
-    }
-    cout << "Scalar product of v1 and v2: " << c << endl;
-    
-    return 0;
-}
-
 float RandNumber(float max)
 {
     return max*rand()/(RAND_MAX+1.0);
@@ -60,3 +39,19 @@ float DotProduct(VectC &v1, VectC &v2, unsigned tam)
     return c;
 }
 
+int main(void)
+{
+    VectC v1(N),v2(N);
+    float c;
+    
+    for(unsigned i = 0; i < REPE; i++)
+    {
+        FillVec(v1, N);
+        FillVec(v2, N);
+    
+        c = DotProduct(v1, v2, N);
+    }
+    cout << "Scalar product of v1 and v2: " << c << endl;
+    
+    return 0;
+}

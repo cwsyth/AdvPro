@@ -6,22 +6,6 @@
 #include <cmath>
 using namespace std;
 
-void radixSort(vector<string>& v);
-int getChar(int place, string str);
-
-int main() {
-    vector<string> v = {
-        "radixsortexample000",
-        "example00002example",
-        "sort0003radix000003",
-        "sortexample00000000",
-        "stringsortingexampl",
-        "000example00000000x",
-    };
-
-    radixSort(v);
-}
-
 int getChar(int place, string str) {
     /*if (place >= str.length()) {
         return ' ';
@@ -68,4 +52,17 @@ void radixSort(vector<string>& v) {
         }
         cout << '\n' << '\n';
     }
+}
+
+int main() {
+    vector<string> v = {
+        "radixsortexample000",
+        "example00002example",
+        "sort0003radix000003",
+        "sortexample00000000",
+        "stringsortingexampl",
+        "000example00000000x",
+    };
+
+    radixSort(v);
 }

@@ -6,15 +6,6 @@
 #include <cmath>
 using namespace std;
 
-void radixSort(vector<int> &v);
-int getDigit(int place, int num);
-
-int main() {
-    vector<int> v = { 403, 16, 239, 821, 9, 342, 910, 524, 373, 145 };
-
-    radixSort(v);
-}
-
 int getDigit(int place, int num) {
     int digit = num;
 
@@ -62,4 +53,10 @@ void radixSort(vector<int> &v) {
         }
         cout << '\n' << '\n';
     }
+}
+
+int main() {
+    vector<int> v = { 403, 16, 239, 821, 9, 342, 910, 524, 373, 145 };
+
+    radixSort(v);
 }

@@ -6,21 +6,6 @@
 #include <algorithm>
 using namespace std;
 
-vector<float> bucketSort(vector<float> v1);
-
-int main()
-{
-    vector<float> vec = { 900.5, -200.3, 0.0, 500.4, -999.9, 250.1, -100.2 };
-    
-    vector<float> sortedVec = bucketSort(vec);
-    
-    for (float f : sortedVec) {
-        cout << f << ", ";
-    }
-
-    return 0;
-}
-
 vector<float> bucketSort(vector<float> v1) {
     vector<vector<float>> bucket(v1.size());
     vector<float> v2;
@@ -37,4 +22,17 @@ vector<float> bucketSort(vector<float> v1) {
     }
 
     return v2;
+}
+
+int main()
+{
+    vector<float> vec = { 900.5, -200.3, 0.0, 500.4, -999.9, 250.1, -100.2 };
+    
+    vector<float> sortedVec = bucketSort(vec);
+    
+    for (float f : sortedVec) {
+        cout << f << ", ";
+    }
+
+    return 0;
 }

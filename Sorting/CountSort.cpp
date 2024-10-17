@@ -6,34 +6,12 @@
 #include <vector>
 using namespace std;
 
+const int domainSize = 10;
+
 struct Person {
     int key;
     string name;
 };
-const int domainSize = 10;
-
-vector<Person> countSort(vector<Person> v1);
-
-int main() {
-
-    vector<Person> persons {
-        {3, "Steven"},
-        {1, "Bob"},
-        {2, "Alice"},
-        {5, "Christian"},
-        {3, "Sebastian"},
-        {10, "Edward"}
-    };
-
-    vector<Person> sortedPersons = countSort(persons);
-
-    cout << "Sorted Persons by Key:\n";
-    for (Person person : sortedPersons) {
-        cout << "Key: " << person.key << ", Name: " << person.name << '\n';
-    }
-
-    return 0;
-}
 
 vector<Person> countSort(vector<Person> v1) {
     vector<int> c(domainSize);
@@ -57,4 +35,25 @@ vector<Person> countSort(vector<Person> v1) {
     }
 
     return v2;
+}
+
+int main() {
+
+    vector<Person> persons {
+        {3, "Steven"},
+        {1, "Bob"},
+        {2, "Alice"},
+        {5, "Christian"},
+        {3, "Sebastian"},
+        {10, "Edward"}
+    };
+
+    vector<Person> sortedPersons = countSort(persons);
+
+    cout << "Sorted Persons by Key:\n";
+    for (Person person : sortedPersons) {
+        cout << "Key: " << person.key << ", Name: " << person.name << '\n';
+    }
+
+    return 0;
 }
