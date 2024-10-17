@@ -21,7 +21,7 @@ void radixSort(std::vector<int> &v) {
     int numberOfDigits = log10(maxValue) + 1;
     
     for (int i = 0; i < numberOfDigits; i++) {
-        std::cout << "Current digit " << i+1 << "\n";
+        std::cout << "Current digit " << i+1 << std::endl;
 
         std::vector<std::vector<int>> bucket(10); // digits 0 to 9
 
@@ -36,7 +36,7 @@ void radixSort(std::vector<int> &v) {
             for (int k = 0; k < bucket[j].size(); k++) {
                 std::cout << bucket[j][k] << ", ";
             }
-            std::cout << '\n';
+            std::cout << std::endl;
         }
 
         // concat
@@ -51,7 +51,7 @@ void radixSort(std::vector<int> &v) {
         for (int num : v) {
             std::cout << num << ", ";
         }
-        std::cout << '\n' << '\n';
+        std::cout << std::endl << std::endl;
     }
 }
 
