@@ -52,12 +52,13 @@ class Stack {
         // Copy Assignment
         Stack& operator=(const Stack& s) {
             if(this != &s) {
-                delete[] v;
+                if(max_size != s.max_size) {
+                    delete[] v;
+                    max_size = s.max_size;
+                    top = s.top;
+                    v = new int[max_size];
+                }
 
-                max_size = s.max_size;
-                top = s.top;
-
-                v = new int[max_size];
                 for(int i = 0; i < max_size; i++) {
                     v[i] = s.v[i];
                 }
@@ -97,3 +98,33 @@ class Stack {
 int main() {
     Stack p({2,3,4,5});
 }
+
+/*
+int main() { 
+    Stack s1(3);
+    std::cout << s1.max_size << std::endl;
+    
+    Stack s2(s1);
+    std::cout << s2.max_size << std::endl;
+
+    Stack s3(std::move(s1));
+    std::cout << s3.max_size << std::endl;
+    std::cout << s1.max_size << std::endl;
+
+    Stack s4(5);
+    std::cout << s4.max_size << std::endl;
+
+    Stack s5(6);
+    std::cout << s5.max_size << std::endl;
+
+    s5 = s4;
+    std::cout << s5.max_size << std::endl;
+
+    Stack s6(7);
+    std::cout << s6.max_size << std::endl;
+    s6 = std::move(s4);
+    std::cout << s6.max_size << std::endl;
+    std::cout << s4.max_size << std::endl; 
+
+    return 0;
+} */
