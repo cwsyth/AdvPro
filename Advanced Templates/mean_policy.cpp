@@ -46,7 +46,7 @@ template<
     typename Policy = ArithmeticMeanPolicy,
     typename Iter
 >
-typename std::iterator_traits<Iter>::value_type sum(Iter beg, Iter end) {
+typename std::iterator_traits<Iter>::value_type mean(Iter beg, Iter end) {
 	using SumT = typename std::iterator_traits<Iter>::value_type;
 
 	SumT total = 0;
@@ -64,13 +64,13 @@ typename std::iterator_traits<Iter>::value_type sum(Iter beg, Iter end) {
 
 int main() {
 	std::vector<double> vec = { 1, 2, 3, 4, 5 };
-	std::cout << "Arithmetic mean of vector: " << sum(vec.begin(), vec.end()) << "\n";
+	std::cout << "Arithmetic mean of vector: " << mean(vec.begin(), vec.end()) << "\n";
 
 	std::list<double> lst = { 1.1, 2.2, 3.3, 4.4 };
-	std::cout << "Arithmetic mean of list : " << sum(lst.begin(), lst.end()) << "\n";
+	std::cout << "Arithmetic mean of list : " << mean(lst.begin(), lst.end()) << "\n";
 
-	std::cout << "Geometric mean of vector: " << sum<GeometricMeanPolicy>(vec.begin(), vec.end()) << "\n";
-	std::cout << "Harmonic mean of vector: " << sum<GeometricMeanPolicy>(vec.begin(), vec.end()) << "\n";
+	std::cout << "Geometric mean of vector: " << mean<GeometricMeanPolicy>(vec.begin(), vec.end()) << "\n";
+	std::cout << "Harmonic mean of vector: " << mean<GeometricMeanPolicy>(vec.begin(), vec.end()) << "\n";
 
 	return 0;
 }
