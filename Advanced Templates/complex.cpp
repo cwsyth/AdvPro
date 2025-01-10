@@ -7,12 +7,12 @@ class Complejo {
 
 template<typename T>
 struct My_is_arithmetic {
-    static constexpr bool value = std::is_arithmetic<T>::value;
+    static constexpr bool value = std::true_type::value;
 };
 
 template<>
-struct My_is_arithmetic<class Complejo> {
-    static constexpr bool value = true;
+struct My_is_arithmetic<float*> {
+    static constexpr bool value = std::false_type::value;
 };
 
 int main() {
