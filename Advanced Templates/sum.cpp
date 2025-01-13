@@ -6,7 +6,7 @@
 template<typename Iter>
 typename std::iterator_traits<Iter>::value_type sum(Iter beg, Iter end) {
 	using SumT = typename std::iterator_traits<Iter>::value_type;
-	SumT sum = 0;
+	SumT sum = SumT();
 
 	while (beg != end) {
 		sum += *beg;
