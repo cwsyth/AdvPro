@@ -7,7 +7,7 @@ T suma() {
 
 template<typename T, typename First, typename... Rest>
 T suma(First first, Rest... rest) {
-	return first + suma<T>(rest...); // suma<T> because cannot deduce type from rest...
+	return first + suma<T>(rest...); // suma<T> because we cannot deduce T from the function arguments
 }
 
 int main() {
