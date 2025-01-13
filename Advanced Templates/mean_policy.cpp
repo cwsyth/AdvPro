@@ -47,9 +47,9 @@ template<
     typename Iter
 >
 typename std::iterator_traits<Iter>::value_type mean(Iter beg, Iter end) {
-	using SumT = typename std::iterator_traits<Iter>::value_type;
+	using MeanT = typename std::iterator_traits<Iter>::value_type;
 
-	SumT total = 0;
+	MeanT total = MeanT();
 	int count = 0;
 
 	while (beg != end) {
