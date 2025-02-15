@@ -16,7 +16,7 @@ struct Init<1, typename T> {
 };
 
 template<int N, typename T>
-void inicializa(T* v, T x) {
+void init(T* v, T x) {
 	return Init<N, T>::result(v, x);
 }
 
@@ -24,7 +24,7 @@ int main() {
 	const int TAM = 4;
 	int v[TAM];
 
-	inicializa<TAM>(v, 3);
+	init<TAM>(v, 3);
 
 	for (int el : v) {
 		std::cout << el << " ";

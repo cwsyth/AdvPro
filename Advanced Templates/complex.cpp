@@ -1,7 +1,7 @@
 #include <iostream>
 #include <type_traits>
 
-class Complejo {
+class Complex {
     float real, im;
 };
 
@@ -18,7 +18,7 @@ struct My_is_arithmetic<float*> {
 int main() {
     std::cout << std::boolalpha;
 
-    std::cout << "My_is_arithmetic<Complejo>::value -> " << My_is_arithmetic<class Complejo>::value << "\n";
+    std::cout << "My_is_arithmetic<Complex>::value -> " << My_is_arithmetic<class Complex>::value << "\n";
 
     std::cout << "My_is_arithmetic<int>::value -> " << My_is_arithmetic<int>::value << "\n";
 

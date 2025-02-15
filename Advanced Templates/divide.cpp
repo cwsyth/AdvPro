@@ -1,7 +1,7 @@
 #include <iostream>
 #include <tuple>
 
-std::tuple<int, int> dividir(int x, int y) {
+std::tuple<int, int> divide(int x, int y) {
     if (y == 0) {
         throw std::invalid_argument("division by zero");
     }
@@ -13,7 +13,7 @@ std::tuple<int, int> dividir(int x, int y) {
 }
 
 int main() {
-    std::tuple<int, int> t = dividir(10, 3);
+    std::tuple<int, int> t = divide(10, 3);
 
     int quo = std::get<0>(t);
     int rem = std::get<1>(t);

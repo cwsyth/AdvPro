@@ -29,11 +29,24 @@ int main() {
 
     // c)
     int i;
+    float a = 0.0f;
     float x[N], y[N];
-    float a = 0.0;
 
-    for(i = 0; i < N; ++i) {
-        a += x[i] * y[i];
+    // use pointers to improve memory access
+    float* px = x;
+    float* py = y;
+
+    // loop unrolling for optimization
+    for (i = 0; i < N - 3; i += 4) {
+        a += px[i] * py[i] +
+            px[i + 1] * py[i + 1] +
+            px[i + 2] * py[i + 2] +
+            px[i + 3] * py[i + 3];
+    }
+
+    // handle any remaining elements
+    for (; i < N; ++i) {
+        a += px[i] * py[i];
     }
 
     return 0;

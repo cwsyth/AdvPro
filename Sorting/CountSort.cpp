@@ -17,7 +17,7 @@ std::vector<Person> countSortStable(std::vector<Person> v1) {
         c[p.key - 1]++;
     }
 
-    // comulative sum
+    // cumulative sum
     for (int i = 1; i < domain_size; i++) {
         c[i] = c[i] + c[i - 1];
     }
